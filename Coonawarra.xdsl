@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Electricity_Price">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="Market_Supply_and_Demmand">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Winery_Contract_certainty">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Market_Supply_and_Demmand</parents>
+			<probabilities>0.6 0.4 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Grape_Price">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Market_Supply_and_Demmand Winery_Contract_certainty</parents>
+			<probabilities>0.6 0.4 0.55 0.45 0.45 0.55 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Seasonal_Conditions">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Pest_and_Disease_Management">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Seasonal_Conditions</parents>
+			<probabilities>0.9 0.1 0.484 0.516</probabilities>
+		</cpt>
+		<cpt id="Spray_Application">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Pest_and_Disease_Management Seasonal_Conditions</parents>
+			<probabilities>0.4 0.6 0.23125 0.76875 0.26875 0.73125 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Vineyard_Floor_Management">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Pest_and_Disease_Management</parents>
+			<probabilities>0.6 0.4 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Soil_Degradation_Management_2">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Spray_Application Vineyard_Floor_Management</parents>
+			<probabilities>0.4 0.6 0.292857143 0.707142857 0.207142857 0.792857143 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Water_Scarcity">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Seasonal_Conditions</parents>
+			<probabilities>0.6 0.4 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Water_Licences">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Water_Price">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Water_Scarcity</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Water_Quality">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Water_Use_efficiency">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Grape_Quality_and_Yield_Targets">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Winery_Contract_certainty</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Water_Use">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Grape_Quality_and_Yield_Targets Water_Licences Water_Price Water_Quality Water_Use_efficiency</parents>
+			<probabilities>0.3 0.7 0.361538462 0.6384615380000001 0.371794872 0.6282051279999999 0.433333333 0.566666667 0.392307692 0.607692308 0.453846154 0.5461538460000001 0.464102564 0.5358974359999999 0.525641026 0.474358974 0.392307692 0.607692308 0.453846154 0.5461538460000001 0.464102564 0.5358974359999999 0.525641026 0.474358974 0.484615385 0.515384615 0.5461538460000001 0.453846154 0.556410256 0.443589744 0.617948718 0.382051282 0.382051282 0.617948718 0.443589744 0.556410256 0.453846154 0.5461538460000001 0.515384615 0.484615385 0.474358974 0.525641026 0.5358974359999999 0.464102564 0.5461538460000001 0.453846154 0.607692308 0.392307692 0.474358974 0.525641026 0.5358974359999999 0.464102564 0.5461538460000001 0.453846154 0.607692308 0.392307692 0.566666667 0.433333333 0.6282051279999999 0.371794872 0.6384615380000001 0.361538462 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Electricity_Use">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Electricity_Price Grape_Quality_and_Yield_Targets</parents>
+			<probabilities>0.3 0.7 0.5 0.5 0.5 0.5 0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Fertiliser_Use">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Seasonal_Conditions</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="Specialist_equipment">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Tractor_Passes">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Fertiliser_Use Specialist_equipment Spray_Application</parents>
+			<probabilities>0.6 0.4 0.483333333 0.516666667 0.533333333 0.466666667 0.416666667 0.583333333 0.583333333 0.416666667 0.466666667 0.533333333 0.516666667 0.483333333 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Fuel_Use">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Tractor_Passes Grape_Quality_and_Yield_Targets</parents>
+			<probabilities>0.6 0.4 0.494117647 0.505882353 0.505882353 0.494117647 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="GHG_Emissions">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Spray_Application Electricity_Use Fertiliser_Use Fuel_Use</parents>
+			<probabilities>0.8 0.2 0.649999996 0.350000004 0.776136364 0.223863636 0.6261363599999999 0.37386364 0.663636363 0.336363637 0.513636359 0.486363641 0.639772727 0.360227273 0.489772723 0.510227277 0.789772727 0.210227273 0.639772723 0.360227277 0.765909091 0.234090909 0.615909087 0.384090913 0.65340909 0.34659091 0.503409086 0.496590914 0.6295454539999999 0.370454546 0.47954545 0.52045455</probabilities>
+		</cpt>
+		<cpt id="Adverse_events">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Seasonal_Conditions</parents>
+			<probabilities>0.4 0.6 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="Yield">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Adverse_events Seasonal_Conditions Water_Use</parents>
+			<probabilities>0.6 0.4 0.533333333 0.466666667 0.525 0.475 0.458333333 0.541666667 0.541666667 0.458333333 0.475 0.525 0.466666667 0.533333333 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Grape_Revenue">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Grape_Price Yield</parents>
+			<probabilities>0.6 0.4 0.5600000000000001 0.44 0.44 0.5600000000000001 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Contract_labor">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Grape_Quality_and_Yield_Targets Vineyard_Floor_Management</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Labor_Cost">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Equipment_Age_in_Years">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Equipment_Use_in_Hours">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="Repair_and_Maintenance">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Equipment_Age_in_Years Equipment_Use_in_Hours Specialist_equipment Tractor_Passes</parents>
+			<probabilities>0.2 0.8 0.344 0.656 0.272 0.728 0.416 0.584 0.392 0.608 0.536 0.464 0.464 0.536 0.608 0.392 0.392 0.608 0.536 0.464 0.464 0.536 0.608 0.392 0.584 0.416 0.728 0.272 0.656 0.344 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Operating_Cost">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Contract_labor Electricity_Use Fertiliser_Use Fuel_Use Labor_Cost Repair_and_Maintenance Water_Use</parents>
+			<probabilities>0.6 0.4 0.587096774 0.412903226 0.580645161 0.419354839 0.567741935 0.432258065 0.561290323 0.438709677 0.548387097 0.451612903 0.541935484 0.458064516 0.529032258 0.470967742 0.561290323 0.438709677 0.548387097 0.451612903 0.541935484 0.458064516 0.529032258 0.470967742 0.522580645 0.477419355 0.509677419 0.490322581 0.503225806 0.496774194 0.490322581 0.509677419 0.587096774 0.412903226 0.574193548 0.425806452 0.567741935 0.432258065 0.55483871 0.44516129 0.548387097 0.451612903 0.5354838709999999 0.464516129 0.529032258 0.470967742 0.516129032 0.483870968 0.548387097 0.451612903 0.5354838709999999 0.464516129 0.529032258 0.470967742 0.516129032 0.483870968 0.509677419 0.490322581 0.496774194 0.503225806 0.490322581 0.509677419 0.477419355 0.522580645 0.574193548 0.425806452 0.561290323 0.438709677 0.55483871 0.44516129 0.541935484 0.458064516 0.5354838709999999 0.464516129 0.522580645 0.477419355 0.516129032 0.483870968 0.503225806 0.496774194 0.5354838709999999 0.464516129 0.522580645 0.477419355 0.516129032 0.483870968 0.503225806 0.496774194 0.496774194 0.503225806 0.483870968 0.516129032 0.477419355 0.522580645 0.464516129 0.5354838709999999 0.561290323 0.438709677 0.548387097 0.451612903 0.541935484 0.458064516 0.529032258 0.470967742 0.522580645 0.477419355 0.509677419 0.490322581 0.503225806 0.496774194 0.490322581 0.509677419 0.522580645 0.477419355 0.509677419 0.490322581 0.503225806 0.496774194 0.490322581 0.509677419 0.483870968 0.516129032 0.470967742 0.529032258 0.464516129 0.5354838709999999 0.451612903 0.548387097 0.548387097 0.451612903 0.5354838709999999 0.464516129 0.529032258 0.470967742 0.516129032 0.483870968 0.509677419 0.490322581 0.496774194 0.503225806 0.490322581 0.509677419 0.477419355 0.522580645 0.509677419 0.490322581 0.496774194 0.503225806 0.490322581 0.509677419 0.477419355 0.522580645 0.470967742 0.529032258 0.458064516 0.541935484 0.451612903 0.548387097 0.438709677 0.561290323 0.5354838709999999 0.464516129 0.522580645 0.477419355 0.516129032 0.483870968 0.503225806 0.496774194 0.496774194 0.503225806 0.483870968 0.516129032 0.477419355 0.522580645 0.464516129 0.5354838709999999 0.496774194 0.503225806 0.483870968 0.516129032 0.477419355 0.522580645 0.464516129 0.5354838709999999 0.458064516 0.541935484 0.44516129 0.55483871 0.438709677 0.561290323 0.425806452 0.574193548 0.522580645 0.477419355 0.509677419 0.490322581 0.503225806 0.496774194 0.490322581 0.509677419 0.483870968 0.516129032 0.470967742 0.529032258 0.464516129 0.5354838709999999 0.451612903 0.548387097 0.483870968 0.516129032 0.470967742 0.529032258 0.464516129 0.5354838709999999 0.451612903 0.548387097 0.44516129 0.55483871 0.432258065 0.567741935 0.425806452 0.574193548 0.412903226 0.587096774 0.509677419 0.490322581 0.496774194 0.503225806 0.490322581 0.509677419 0.477419355 0.522580645 0.470967742 0.529032258 0.458064516 0.541935484 0.451612903 0.548387097 0.438709677 0.561290323 0.470967742 0.529032258 0.458064516 0.541935484 0.451612903 0.548387097 0.438709677 0.561290323 0.432258065 0.567741935 0.419354839 0.580645161 0.412903226 0.587096774 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Economic_Impact">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Grape_Revenue Operating_Cost</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.5 0.5 0.1 0.9</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Network1">
+			<textbox>
+				<caption>state0: ideal\nstate1: notideal\n</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>25 65 98 93</position>
+			</textbox>
+			<node id="GHG_Emissions">
+				<name>GHG Emissions</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>377 570 463 623</position>
+			</node>
+			<node id="Pest_and_Disease_Management">
+				<name>Pest and Disease Management</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>175 514 276 577</position>
+			</node>
+			<node id="Spray_Application">
+				<name>Spray Application</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>589 36 684 95</position>
+			</node>
+			<node id="Water_Quality">
+				<name>Water Quality</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1227 542 1303 589</position>
+			</node>
+			<node id="Water_Use">
+				<name>Water Use</name>
+				<interior color="ff0000" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>970 717 1034 757</position>
+			</node>
+			<node id="Electricity_Use">
+				<name>Electricity Use</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>553 799 633 849</position>
+			</node>
+			<node id="Fertiliser_Use">
+				<name>Fertiliser Use</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>952 363 1027 409</position>
+			</node>
+			<node id="Fuel_Use">
+				<name>Fuel Use</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>422 673 479 708</position>
+			</node>
+			<node id="Tractor_Passes">
+				<name>Tractor Passes</name>
+				<interior color="ffff00" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1350 213 1436 266</position>
+			</node>
+			<node id="Grape_Quality_and_Yield_Targets">
+				<name>Grape Quality and Yield Targets</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1070 414 1175 479</position>
+			</node>
+			<node id="Grape_Price">
+				<name>Grape Price</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>762 1167 837 1213</position>
+			</node>
+			<node id="Soil_Degradation_Management_2">
+				<name>Soil Degradation Management</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>760 75 861 138</position>
+			</node>
+			<node id="Vineyard_Floor_Management">
+				<name>Vineyard Floor Management</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>377 427 478 490</position>
+			</node>
+			<node id="Seasonal_Conditions">
+				<name>Seasonal Conditions</name>
+				<interior color="000000" />
+				<outline color="000080" />
+				<font color="ffffff" name="Arial" size="8" />
+				<position>34 333 142 400</position>
+			</node>
+			<node id="Electricity_Price">
+				<name>Electricity Price</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>685 428 769 480</position>
+			</node>
+			<node id="Water_Scarcity">
+				<name>Water Scarcity</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>282 965 366 1017</position>
+			</node>
+			<node id="Water_Licences">
+				<name>Water Licences</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1209 413 1297 468</position>
+			</node>
+			<node id="Water_Price">
+				<name>Water Price</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1211 599 1280 642</position>
+				<comment>Water Availability was combined with water scarcity\n\nWater availability was a renaming (This note here is for clarity)</comment>
+			</node>
+			<node id="Water_Use_efficiency">
+				<name>Water Use efficiency</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1175 701 1253 749</position>
+			</node>
+			<node id="Specialist_equipment">
+				<name>Specialist equipment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1502 726 1610 793</position>
+			</node>
+			<node id="Market_Supply_and_Demmand">
+				<name>Market Supply and Demmand</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 1184 676 1244</position>
+			</node>
+			<textbox>
+				<caption>The economic outcomes are a child subtree of the environmental</caption>
+				<font color="000000" name="Arial" size="8" />
+				<position>127 69 368 97</position>
+			</textbox>
+			<node id="Economic_Impact">
+				<name>Economic Impact</name>
+				<interior color="000000" />
+				<outline color="000080" />
+				<font color="ffffff" name="Arial" size="8" />
+				<position>896 1350 987 1406</position>
+				<barchart active="true" width="243" height="168" />
+			</node>
+			<node id="Contract_labor">
+				<name>Contract labor</name>
+				<interior color="ff0000" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1088 555 1168 605</position>
+			</node>
+			<node id="Grape_Revenue">
+				<name>Grape Revenue</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>840 1057 928 1112</position>
+			</node>
+			<node id="Operating_Cost">
+				<name>Operating Cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1066 1066 1150 1118</position>
+			</node>
+			<node id="Labor_Cost">
+				<name>Labor Cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>947 881 1013 922</position>
+			</node>
+			<node id="Repair_and_Maintenance">
+				<name>Repair and Maintenance</name>
+				<interior color="ff0000" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1166 828 1251 881</position>
+			</node>
+			<node id="Yield">
+				<name>Yield</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>536 1044 579 1070</position>
+			</node>
+			<node id="Adverse_events">
+				<name>Adverse events</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>448 1157 537 1212</position>
+			</node>
+			<node id="Equipment_Age_in_Years">
+				<name>Equipment Age in Years</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1330 533 1423 591</position>
+			</node>
+			<node id="Equipment_Use_in_Hours">
+				<name>Equipment Use in Hours</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1361 664 1454 722</position>
+			</node>
+			<node id="Winery_Contract_certainty">
+				<name>Winery Contract certainty</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>820 507 910 563</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
