@@ -1,0 +1,543 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+\title{Paper 4}
+\author{Bryce Polley}
+\date{November 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Preamble notes}
+% This is paper 4:
+
+% The paper is the follow-up to paper 3: the Environmental BN.
+
+% Here, we have created two further BNs for Coonawarra and for the Riverland, which encompass the economic concerns of winegrowers. 
+
+% The similar nodes allow for an expansion of the first paper into a combination of economic and environmental concerns.
+
+% Upon combining these two BNs together, we found some nodes that were 'swing' nodes (similar in concept to a swing state in that they potentially held great sway over the model but could be either negative or positively contributing. This was because, in theory, every litre of water or fuel would equally impact the environment negatively/positively as it would impact the economic outlook.
+
+% The swing nodes, or nodes of interest, were: tractor passes, water use, fuel use and yield. With reasonable consistency between both regions but no to the exact same extent.
+
+% Notably, a workshop was conducted after the creation and subsequent combining of these networks to see if further insights could be gained to address these nodes and improve both outlooks.
+
+% Two main node nodes of further interest were identified. Several concepts are mentioned but are unable to be fully incorporated into the model. The two main contributing concerns were the maintenance and repair of irrigation systems and adaptive strategies (specifically when utilising tractors, such as early pruning.
+
+% Further concerns raised but not fully integrated were the furtherment of technology to reduce labour costs and increase the longevity of equipment. These both were addressed through the use of variable drives and the automation of tasks such as pruning, etc. (some technologies brought up were emerging, and others already existed). A significant consideration was the creation of simpler and more affordable early warning systems that were as simple as informing growers of system failures so that they could be repaired. A general consensus was that even though some gauges exist, the need to know specific pressures or temperatures was not desirable and that these systems only need to inform whether the pressure/temperature was dangerously out of range.
+
+% Better tractors, such as automated ones or swarm tractors, were also seen as potential solutions, especially to the issues with contract labour0. The difficulties arising from contractors were the lack of them, the restriction to when they are available (primarily due to the lack of them) and being at the mercy of when contractors would spray, which was not always ideal. It is also not always viable for a vineyard to do its own sprays if it lacks equipment or personnel.
+
+% Repair and maintenance of irrigation systems highlighted the need for feral animal control due to their destructive nature on these systems, primarily by chewing. Sheep were a concern also included in this, in that they would chew the system. This was seen as a negative side effect of using sheep grazing to help fertilise crops. Feral animals of concern were fish, kangaroos and rabbits.
+
+% Other adaptive strategies included many SWA exemplars, such as Oli growing mid-row crops and the soil management programs, etc. Many further challenges, such as specialist equipment, equally made these approaches difficult.
+
+% The largest hurdle to enacting many of these approaches was seen to be capital investment. The initial cost is generally to great, however once a catastrophic event such as frost occurred it was agreed that many operation would immediately invest in preventative measures (but onlyafter losing substantial capital). it was also seen that government grants to help support growers in buying newer technologies that can be more environmentally friendly were greatly beneficial, especially when they assisted in reducing the capital investment.
+
+% %%%%%%%%%%%%%%%%%%%%
+
+% Things to do:
+% - use the data and the literature to help illustrate these effects i.e the difference in water use/tractor passes/fuel/yield and its effectiveness in these regions. i.e. what is the variation in these regions that help to show the differences in water/ha etc. How well can people do as opposed to how badly?
+% - acknowledge that change needs to happen and that support needs to be there to assist growers in adopting these adaptive strategies.
+% -Use SWA to show some adaptive strategies used in Australia.
+
+
+
+\section{Introduction}
+
+% Agriculture interacts with economy and environment
+
+% Economic struggle in Australia
+
+% Prior research within economic pressures and sustainability etc in Australia
+
+% What has been asked of researches in regards to these goals.
+
+% Goals of this paper
+
+% How we are going to address these goals
+
+% How these addresses literature and why
+
+Agriculture operates at the intersection of economic viability and environmental stewardship, with each domain profoundly influencing the other #ref. Economic incentives often drive farming practices, yet these practices can have significant environmental repercussions #ref. Conversely, environmental policies and conditions shape agricultural productivity and profitability. Understanding this interplay is crucial for developing sustainable agricultural systems that balance economic and environmental objectives #ref.
+
+The Australian winegrowing industry exemplifies this complex relationship, contributing significantly to the national economy while facing challenges such as climate variability #ref, resource constraints #ref, and evolving market demands #ref. Sustainability in this sector requires optimizing vineyard operations such as water use, fuel consumption, and agrochemical application, not only to maintain economic viability but also to mitigate environmental impact #ref [MDPI 2024]. Studies have demonstrated that resource-intensive vineyard practices can drive short-term financial gains at the expense of long-term ecological health, underscoring the need for integrated decision-making tools #ref.
+
+Economic drivers play a critical role in shaping sustainability outcomes in viticulture #ref. Factors such as production costs, market trends, and investment in sustainable technologies influence environmental practices #ref. For example, the shift toward premiumisation in the wine industry has encouraged sustainable vineyard management strategies that enhance wine quality while reducing environmental impact #ref. However, financial constraints—such as the high capital costs associated with renewable energy adoption and efficient irrigation systems—can hinder widespread implementation of sustainability initiatives.
+
+In response, industry-led programs are promoting more sustainable practices #ref. In the Riverland region, the Riverland Wine Industry Blueprint prioritizes the adoption of Sustainable Winegrowing Australia accreditation #ref. Similarly, in Coonawarra, wineries such as Raidis Estate have implemented sustainability action plans focusing on minimizing resource consumption and mitigating climate change impacts #ref. These initiatives illustrate how economic and environmental factors are inherently linked, with market demands and regulatory frameworks shaping sustainable decision-making at the vineyard level #Remove?.
+
+Scenario analysis is a valuable tool for exploring how different economic and environmental conditions impact sustainability #ref. Bayesian Networks (BNs) have been widely applied in agricultural sustainability research, as they integrate qualitative and quantitative data while accounting for uncertainty #ref [Kaikkonen et al., 2021]. Participatory modeling approaches, in which stakeholders contribute to defining system dynamics, further enhance the relevance and acceptance of model outcomes #Ref[Scrieciu et al., 2021].
+
+Causal networks, which serve as the foundation for Bayesian Networks, provide a structured way to visualize interactions between key sustainability factors, helping stakeholders understand complex cause-effect relationships #Ref [Döll et al., 2013]. These models support scenario-based decision-making, allowing industry stakeholders to evaluate trade-offs between economic viability and environmental impact under various future conditions.
+
+This study aims to explore the intricate relationship between economic and environmental factors in viticulture, focusing on the Coonawarra and Riverland winegrowing regions. Specifically, it seeks to answer what are the primary economic factors driving sustainability in these regions? Along with this, how do these factors interact with environmental factors? and what the implications of varying scenarios have for economic and environmental outcomes.
+
+By integrating economic Bayesian Networks with existing environmental models, this research provides a nuanced perspective on sustainability trade-offs in viticulture. Through the application of linear pooling and scenario analysis, the study aims to generate insights that can inform both industry practices and policy development, fostering a sustainable future for these key winegrowing regions.
+
+% % Literature review
+% % What are the driving economic factors for sustainability in the Coonawarra and Riverland winegrowing regions?
+% % How do these interact with environmental factors?
+% % How do different scenarios affect them?
+% The Australian wine industry is a significant contributor to the nation's economy. Recent studies have highlighted the importance of sustainable practices in the wine industry. For instance, a comprehensive review identified key environmental variables influencing the life cycle assessment of wine production, emphasizing the need for standardized assessment methods to ensure accurate determination of influential factors in reducing emissions. 
+% % https://www.mdpi.com/2071-1050/16/13/5613?utm_source=chatgpt.com
+
+% % These regions exemplify the intricate balance between economic viability and environmental sustainability that modern agriculture must achieve.
+
+% The Australian winegrowing industry occupies a critical intersection of economic ambition and environmental stewardship, reflecting both global trends in sustainability and localized challenges driven by regional diversity. Winegrowing not only contributes significantly to the nation’s agricultural economy but also navigates a complex landscape shaped by climate variability, resource constraints, and evolving market demands Env BN article article.
+
+% Sustainability within this sector hinges on achieving a balance between economic viability and ecological responsibility. Existing research has demonstrated that vineyard practices—such as water use, fuel consumption, and agrochemical applications—not only drive operational costs but also influence broader environmental outcomes. Recent studies highlight that resource-intensive practices often trade short-term economic gains against long-term environmental risks Env BN article. To address these challenges, decision-support tools like Bayesian Networks and machine learning models have emerged, facilitating a holistic understanding of the multifaceted relationships between resource use, yield, and environmental impact Env BN article article.
+
+% Building upon prior analyses of vineyard operational efficiencies and environmental considerations, this study seeks to expand the scope of sustainability in viticulture by integrating economic modeling into environmental frameworks. Specifically, it explores the economic drivers of sustainability in the Coonawarra and Riverland winegrowing regions, focusing on three core questions:
+
+% What are the primary economic factors driving sustainability in these regions?
+% How do these factors interact with environmental variables?
+% What implications do varying scenarios have for economic and environmental outcomes?
+% By linking economic Bayesian Networks with environmental insights, this research aims to provide a nuanced perspective on the trade-offs inherent in viticultural practices. Through the integration of linear pooling and case-specific analyses, this study not only seeks to elucidate the economic-environmental nexus but also to offer actionable recommendations for policy and practice in an industry increasingly defined by its sustainability ambitions article article.
+
+
+% In the Riverland region, initiatives like the Riverland Wine Industry Blueprint emphasize accelerating the adoption of Sustainable Winegrowing Australia accreditation among its participants, highlighting a regional commitment to sustainable practices. 
+% RIVERLAND WINE
+
+% Similarly, in Coonawarra, wineries like Raidis Estate have implemented comprehensive sustainability action plans focusing on minimizing resource consumption, addressing climate change impacts, and enhancing overall environmental performance. 
+% SUSTAINABLE WINEGROWING AUSTRALIA
+
+% Understanding the driving economic factors that influence sustainability in these regions is crucial. Economic drivers such as production costs, market access, and investment in sustainable technologies directly impact the environmental practices of wineries. For example, the adoption of renewable energy sources and efficient irrigation systems requires significant capital investment, which is influenced by the economic health of the industry.
+
+% Moreover, the interaction between economic and environmental factors is evident in the industry's response to global market trends. The shift towards premiumization, where consumers prefer higher-quality wines, has led producers to focus on sustainable vineyard management to enhance wine quality. This strategy not only meets consumer demand but also promotes environmental sustainability.
+
+% Scenario analysis further elucidates how different economic and environmental conditions can affect sustainability outcomes. By modeling various scenarios, stakeholders can better anticipate challenges and develop strategies that align economic objectives with environmental sustainability.
+
+% This paper aims to explore these dynamics by addressing the primary question: What are the driving economic factors for sustainability in the Coonawarra and Riverland winegrowing regions? Through the development of an economic Bayesian Network and the application of linear pooling, the study will analyze how economic and environmental factors interact and how different scenarios may influence these interactions. The goal is to provide insights that can inform both industry practices and policy decisions, fostering a sustainable future for these vital winegrowing regions.
+% % Humans and ecosystems are adapted to past environmental conditions. Climate change alters these conditions, requiring adaptation all around the globe. However, while a lot is known about climate change risks, efforts for adaptation are not sufficient (IPCC et al., 2023). There is a gap between knowing the risks and acting accordingly (“know-do gap”; Bammer, 2013), which can be overcome with “[c]o-production […] by creating useful and place-based knowledge and by motivating people to act, who are otherwise not interested in science” (Bremer and Meisch, 2017). Accordingly, it is widely accepted that multi-sectoral stakeholders and multi-disciplinary scientists should develop climate change adaptation strategies in a transdisciplinary mode in participatory processes (Scrieciu et al., 2021; Daniels et al., 2020; Döll and Romero-Lankao, 2017).
+% Participatory modeling is a popular method to integrate knowledge. It makes the participants co-define a problem, structure the problem field (thereby gaining a better system understanding), identify relevant system components and their relations, learn others’ and express their own perspectives, and explore trade-offs between the system components (Hedelin et al., 2021; Scrieciu et al., 2021; Voinov et al., 2018).
+% The model is a boundary object and has the double role of being a discussion reason and the product of knowledge integration (Frank, 2015; Strasser et al., 2014; Cash et al., 2002). In contexts with deep uncertainty, participatory modeling should not be used for prediction but to explore and inform better decisions (Marchau et al., 2019; Popper et al., 2005).
+
+% When a model is developed participatorily, the acceptance of the model results is enhanced (Kaikkonen et al., 2021), depending on the degree of participation in the modeling effort (Scrieciu et al., 2021).
+
+
+% Causal networks are often applied in participatory processes to visualize the problem understanding of the stakeholders. They are “a type of causal map in which the factors that the actor perceives as relevant in the considered problem field are represented as nodes that are connected by arrows denoting causal influences” (Döll et al., 2013). Showing the causal relationship between system components, causal networks support stakeholders in understanding complex cause-effect relationships (Frank, 2015). The qualitative causal networks can be further developed into quantitative probabilistic Bayesian Networks (BNs), which enable the computation of the probability that a network component is in a predefined state (Düspohl et al., 2012). In BNs, conditional probabilities quantify the causal relationships (Düspohl and Döll, 2016). BNs are often applied in participatory modeling (Kaikkonen et al., 2021; Ahmadi et al., 2015; Aguilera et al., 2011), while also matching the (climate) scientists’ way of thinking (Shepherd, 2019). They can integrate qualitative and quantitative data and data and knowledge from different sources, making them especially useful for transdisciplinary research (Phan et al., 2016; Düspohl et al., 2012; Pollino and Henderson, 2010). Uncertainty of knowledge is made explicit in the probabilistic BNs (Kaikkonen et al., 2021; Parviainen et al., 2020; Ahmadi et al., 2015). In addition, BNs allow displaying the system under consideration in different complexity levels, thus allowing simplification (Shepherd, 2019; Kumar et al., 2012).
+
+% BNs are often used to assess and rank risks, which is an important step in participatory climate change risk management (Döll and Romero-Lankao, 2017). Exploring many scenarios (e.g. with “what-if questions”) supports inductive reasoning, and facilitates communication of risks and their uncertainty (Kaikkonen et al., 2021; Marchau et al., 2019; Castelletti and Soncini-Sessa, 2007). BNs on climate change risks can also serve to explore adaptation measures if they are included in the BN as factors that impact the risk. However, such BNs typically fall short of assessing the conditions under which specific adaptation measures that are suitable for risk reduction are likely to be implemented.
+
+
+
+\section{Methods}
+
+% Bayesian networks (BNs) are a popular tool used for describing complicated systems. From their beginnings in computer science, BNs have been increasingly used in a range of fields such as ecology \cite{johnson2012integrated}, natural resource management \cite{pollino2007parameterisation}, computational biology \cite{friedman2000using}, medical diagnosis \cite{heckerman1990probabilistic} and forensics \cite{taroni2004general}. 
+
+Building upon the foundational work of the prior BN modelling in the Australian winegrowing industry, this study extends the application of BNs to integrate economic and environmental factors into a combined framework for sustainability analysis. Prior research demonstrated the efficacy of BNs in mapping complex, interrelated factors within the winegrowing regions of Coonawarra and Riverland. The BN focused on factors connected to the environmental impact of vineyards, such as water use, greenhouse gas emissions, and agrochemical impacts. This study advances that framework by incorporating economic dimensions, enabling a more comprehensive exploration of the interplay between economic drivers and environmental outcomes.
+
+% The methodological approach leverages expert knowledge, regional data, and prior literature to construct and quantify an economic Bayesian Network (EBN). The process includes:
+
+% Defining Economic Nodes: Identification of key economic factors, such as operational costs, grape prices, and capital investments, informed by industry feedback and existing datasets article article.
+% Incorporating Environmental Interactions: Establishing links between economic nodes and environmental factors, drawing from prior BN structures and sensitivity analyses to maintain consistency across frameworks Env BN article.
+% Scenario Modeling: Employing linear pooling to simulate varying economic and environmental conditions, enabling the evaluation of trade-offs and synergies under different management strategies and external pressures.
+% By extending the scope of BN modelling to include economic considerations, this study introduces a novel decision-support framework that bridges the gap between environmental sustainability and economic viability. The resulting EBN serves as a robust tool for identifying critical leverage points, informing policy development, and guiding industry practices towards more sustainable outcomes.
+
+\subsection{Bayesian network development}
+% This builds upon prior work from Boyd et al 2025
+% How was the expert elicitation conducted
+BNs are graphical models used for reasoning under uncertainty \cite{pearl1986fusion}. A BN is constructed as a directed acyclic graph (DAG) that represents factors as nodes and direct dependencies between them as arcs \cite{pearlbayesian}. These dependencies are quantified using conditional probability tables (CPTs), which describe the probability of each node's states given the states of its parent nodes. This structure allows Bayesian Networks to represent the joint probability distribution of a system by factoring it into simpler, marginal distributions. The software package GeNIe, created by Bayesfuse \cite{bayesfusion2024genie}, was used to create and calculate the probabilities of the BNs for this study. Where, the probability of any given variable is expressed by
+
+$$P(x_{0}=x_{0})P(X_{1}, X_{2}, ... , X_{n}) = p(n|x_{parents}) \prod^{n}_{i=1} P(X_{i}) | Parents (X_{i})) $$,
+
+where $X_{i}$ represents a node, and $Parents(X_{i})$ are its immediate predecessors in the network. CPTs can be populated using both data and elicitated expert knowledge, with this study using the latter to build upon the prior study by \cite{environmental_bn}.
+
+This process involved following the format in \cite{korb2010bayesian, pourret2008bayesian}. Iteratively progresses through problem definition, structure, parameterisation, and then validation. Workshops were used in conjunction with a web app to facilitate the process. The addition of a web app followed a similar style to \cite{nyberg2022bard}. Initially, the BARD (Bayesian ARgumentation via Delphi) application was directly explored to assist in the BN construction. However, workshops being predominantly in-person led to the use of a custom web app based on the data entry capabilities of BARD to assist with quantification after workshops. This was due to participant time and distance constraints, with a further consideration being the need to customise inputs to align with the use of linear interpolation across binary classes to calculate CPT values.
+
+% https://onlinelibrary.wiley.com/doi/10.1111/risa.13772
+The use of these methodologies is discussed in greater depth by \cite{werner2017expert}, where the burden of elicitation on experts is examined both in terms of the volume of assessments required and the complexity of the scenarios presented. Various elicitation approaches have been explored, including piecewise interpolation \cite{wisse2008elicit} and structured probabilistic techniques such as the noisy-OR and noisy-MAX methods \cite{diez1993parameter, pearl2014probabilistic}. A comparative study by Wisse et al. \cite{wisse2008relieving} evaluated three elicitation techniques: a likelihood-based method, a piecewise linear interpolation approach for Bayesian Belief Networks (EBBN), and a weighted sum method. To ensure continuity with prior research, the ranking and interpolation method used previously was maintained in this study.
+
+During workshop discussions, participants found it most intuitive to express a factor's influence on its child node using a scale from 1 to 10. This ranking was then integrated with the selected elicitation method to calculate probabilities using the following formula:
+
+\begin{equation} p = x \sum_{i}^{n} \alpha_{i} + y \sum_{i}^{m} \beta_{i} \end{equation}
+
+where $n$ and $m$ represent the counts of factors in ideal and non-ideal states, respectively. The boundary cases, when all contributing factors are either ideal ($p_{t}$) or not ideal ($p_{f}$), are given by:
+
+\begin{equation} p_t = x \sum_{i}^{n} \alpha_{i}, \quad p_f = y \sum_{i}^{m} \beta_{i} \end{equation}
+
+The values of $x$ and $y$ were determined by summing the weights assigned to the Bayesian Network structure. A smooth interpolation was assumed between worst- and best-case scenarios, ensuring that intermediate states were proportionally weighted based on their relative influence. This approach allowed for a structured yet flexible method of probability assignment while minimising the cognitive burden on experts.
+
+More types of elicitation techniques exist that have been developed to over come the challenges due to the cognitive burden on experts, particularly in complex domains (Werner and Sjökvist, 2017). Each method requiring different levels of expertise, for example, Hansson and Sjökvist (2013) compared three approaches: the likelihood method, which demands an understanding of probability distributions and log-likelihoods; the piecewise linear interpolation method (EBBN), which requires defining rows of conditional probability tables (CPTs); and the weighted sum method, which assigns relative weights to parent nodes. While the likelihood method produced the most robust results, it also placed the highest technical demands on experts.
+
+Alternative approaches focus on reducing the number of elicited parameters while maintaining accuracy. Cain’s linear interpolation method (Cain, 2001) constructs CPTs by eliciting probabilities for “best” and “worst” scenarios and interpolating between them. Taguchi’s orthogonal arrays (Taguchi and Konishi, 1987) use a fractional factorial design to balance parent states across a reduced number of scenarios. Alkhairy and Low-Choy (2017) found that while the combined use of these two methods improved accuracy, it doubled the elicitation burden.
+
+The suitability of these methods depends largely on the comfort of experts with different mathematical expressions of events. Where some techniques, such as ranking and interpolation, are preferable when domain experts lack formal training in probability distributions (Hassall et al., 2019). Given these considerations, this study followed the approach used in prior work, maintaining continuity with a ranking-based interpolation method to construct CPTs efficiently while minimising the cognitive load on experts but allowing for high complexity within the BN's structure.
+
+\subsection{Linear Pooling}
+% Kerrie's airport models
+% https://www.mdpi.com/1099-4300/20/3/209
+% The information, resources and time required to quantify EEBNs in itself has raised methodological questions by researchers #ref. Authors have proposed the use of many different systems in which to help this process. And furthermore, how the opinions of multiple experts can be represented together within a BN. 
+
+The combining of experts’ opinions within BNs has received considerable attention within the Bayesian community, and many methods have been proposed. A review of these methods is presented by \cite{genest1986combining} and further discussed by \cite{ohagan2006uncertain} and more recently by \cite{albert2012combining}. As highlighted by \cite{ohagan2006uncertain}, Pooling is a prominent approach among these methods. With many different types of Pooling, such as logarithmic \cite{genest1984aggregating}, nonlinear geometric combination \cite{faria2008geometric}, and linear Pooling \cite{mcconway1981marginalization}. Further methods have recently been developed to enable nonlinear propagations \cite{volodina2024propagatingmomentsprobabilisticgraphical}, measurement error \cite{farr2020combining}, adversarial learning \cite{rios2023adversarial} and causal systems, including the definition of generic algebraic classes \cite{ramiah2024bayesian} all within the context of BNs.
+
+A common approach among these methods is to combine probabilities, expert or otherwise, using linear pooling \cite{mcconway1981marginalization}. This method of combining knowledge from multiple experts was investigated by \cite{farr2018prior}, listing the two approaches of prior and posterior pooling. Chosen of the two for this study was Prior Linear Pooling (PrLP) due to its ability to be reviewed straight away for predictive and intercausal reasoning \cite{korb2010bayesian}, allowing experts to rapidly iterate on the structure and results of the BN even during the workshops as well as being able to incorporate elements from the prior environmental BN and the economic BN.
+
+In the general form this approach combines probabilities $P_{i}(X)$ by calculating,
+$$P(X)=\sum^{n}_{i=1}\omega_{i} P_{i}(X)$$,
+where $\omega_{i}$ are positive weights given to each of the experts; and for all $n$ experts,
+$$\sum^{n}_{i=1}\omega_{i}=1$$.
+As with \cite{farr2018prior}, each of the experts is given equal weighting in this study.
+
+In this study, linear pooling was employed to aggregate probabilities for nodes shared between the newly developed Economic BN and the pre-existing Environmental BN. Shared nodes were combined by pooling their probabilities, assigning equal weight to contributions from both networks. This approach ensured that the resulting model equally reflected the economic and environmental dimensions of sustainability, maintaining a balanced representation of their respective influences. By linking the BNs through shared nodes, the combined network provided a unified platform for exploring interactions between economic and environmental factors. PrLP was particularly valuable for constructing a BN that balanced economic and environmental considerations. By combining probabilities at nodes shared by both networks, the resulting model captured the interconnected influences between these two domains.
+
+
+% % 2. Bayesian Networks
+% % Bayesian networks (BNs) are a graphic modelling method used for reasoning under uncertainty [13]. A BN is constructed as a directed acyclic graph (DAG) that represents variables of interest as nodes and direct dependencies between the variables as directed arrows or arcs [14]. Nodes connected by an arc are commonly called parent or child nodes, depending on the direction of the arrow. An example of this structure is shown later in Figure 1.
+% % Entropy 20 00209 g001 550
+% % Figure 1. The Wayfinding Bayesian Network [12].
+% % In the BNs of interest here, the nodes are discrete in nature, for example Boolean (true or false), ordered values (low, medium, high), and integer ranges (1–49, 50–100), although continuous nodes are also possible [15]. Each node is quantified by a probability table that is either marginal over the states if the node has no parents, or conditional on the states of the parent nodes. These are commonly collectively called conditional probability tables (CPTs) and are populated using data or other information available about the system or problem, including information obtained from experts [15,16]. Each CPT is denoted by
+% % % P(X��|
+% % % Xpa(��)
+% % % ), where V is a set of one or more nodes in the DAG; P(X��
+% % % ) is the joint probability distributions over the set of variables X��
+% % % , and Xpa(��)
+% % %  is the set of parent variables of X��
+% % % , i.e., those nodes connected directly to V. The conditional probabilities take the form P(X��=����|Xpa(��)=��pa(��))=��
+% % % .
+
+% These probabilities thus define a factorisation of a joint probability distribution over the variables represented in the DAG, in that the probability distribution of the BN is the product of the conditional probabilities of each of the variables of a BN conditioned only on its parents [16]. This feature of BNs means that all marginal prior and posterior probabilities can be obtained by marginalizing and conditioning, and that knowledge about one or more variables can be updated as new knowledge or evidence about other variables is acquired [17].
+
+% The structure of a BN admits a number of simplifications that can lead to efficiencies in quantification, interpretation and computation. Examples include d-separation and the existence of Markov blankets, which are comprised of a node and all the variables that shield it from the rest of the network (i.e., its parents, children and children’s other parents) (see [18,19,20]). 
+
+% Moreover, because they provide a full representation of probability distributions over their variables, they are able to condition upon any subset of their variables and support any direction of reasoning (see [15,16,20]). These include: diagnostic reasoning from symptom to cause, following the opposite direction to network links; predictive reasoning from new information about causes to new beliefs about effects, following the direction of the network links; and intercausal reasoning about the mutual causes of a common effect, following a v-structure in the network.
+
+% Some of the practical advantages of BNs are that they are suitable for small and incomplete datasets; that they allow for structural learning; that different sources of knowledge and data types can be combined; that they can be solved analytically and hence can provide a fast, real-time response to queries; and that they can be extended to incorporate spatial and temporal dynamic processes [21,22,23].
+% 3. Linear Pooling Methods for Combining Opinions
+
+% % A common way in which to combine the probabilities P��(��)
+% %  obtained from experts is linear pooling [24]. In its most general form, the probabilities required are calculated by P(��)=∑����=1����P��(��)
+% % , where ����
+% %  are positive weights given to each of the n experts and ∑����=1����=1
+% % . In this paper, each of the n experts is given equal weighing since the wayfinding process is a person-specific experience. Since the purpose of the WBNM was to investigate the factors that influence or impact wayfinding in airports for all users, each respondent’s experience was considered to be equal in value. Hence, ����=1/��
+% %  and so P(��)=∑����=1P��(��)/��
+% .
+
+% Prior Linear Pooling (PrLP), the most common pooling method, pools the elicited probabilities within each node. These probabilities are then propagated through the single network to find the marginal probabilities for the nodes of interest. 
+% % Posterior Linear Pooling (PoLP) uses the elicited probabilities to form a BN for each of the n experts. Pooling is then undertaken at the final node, or at particular nodes of interest, to obtain the relevant marginal probability distribution. The idea of PoLP has been around for a while in the BN community, but the authors are unaware of papers that formalized such approach. In both approaches, pooling is performed just at individual nodes, not jointly in more nodes: in this way, we are avoiding the general problem that linear pools in multivariate settings do not preserve, in general, independence.
+% Advantages and Disadvantages of Linear Pooling Methods for Combining Opinions
+% Each method, of course, has its advantages and disadvantages. The first difference is the number of steps required to get to the stage where the final marginal probabilities of the nodes in the BN can be found. As shown in Figure 2, PrLP only requires three steps before information about the marginal probabilities can be obtained. This differs from PoLP, which requires an extra step to obtain marginal probability information about the nodes of interest. This is because the latter method requires n BNs (where n is the number of experts) to be formed before it can be used.
+% Entropy 20 00209 g002 550
+% Figure 2. The steps involved in the expert opinion combination methods used.
+% PrLP allows the single BN, which contains the pooled opinions at each state, to be used straight away for diagnostic, predictive, and intercausal [15] reasoning. It also allows the updating of information in the BN to be done quickly, which is one of the advantages of using BNs. The number of BNs required for each method makes the model reasoning a more cumbersome process for PoLP. Reasoning and information updating with this method needs to be done for each BN, and then the pooling method is applied. Depending on the number of updates, reasoning types, and BNs, this could become a time-consuming task. A list of advantages and disadvantages for each method is shown in Table 1. Further discussion of the issues raised in the table is deferred to Section 6.
+% Table 1. Advantages and disadvantages of using Prior Linear Pooling and Posterior Linear Pooling for combining the opinions of multiple experts.
+% Table
+
+\subsection{Study regions}
+% How and why were these regions chosen
+Due to their distinct environmental and economic characteristics, Coonawarra and the Riverland were selected as case studies for this research. These regions, previously studied in the context of environmental sustainability, provide an ideal foundation for expanding the analysis to include economic sustainability considerations.
+
+Located in South Australia's Limestone Coast zone, Coonawarra is distinguished by its cooler climate and unique terra rossa soils, which contribute to its reputation for producing high-quality wines, particularly Cabernet Sauvignon~(\cite{hallidayAustralianWineEncyclopedia2009}). The region's focus on premium wine production necessitates vineyard practices that balance resource efficiency with maintaining high grape quality. However, economic factors such as production costs, market positioning, and consumer demand for premium wines also play a critical role in shaping sustainability strategies.
+
+In contrast, the Riverland is an inland region characterized by a continental climate, lower disease pressure, and a strong reliance on irrigation from the Murray River. The Riverland is a high-production region growing Cabernet Sauvignon, Shiraz, and Chardonnay, with an industry structure geared toward large-scale, cost-efficient viticulture~(\cite{hallidayAustralianWineEncyclopedia2009}). The economic drivers in this region are distinct from those in Coonawarra, with a focus on production efficiency, water management, and maintaining profitability in a competitive global market.
+
+Integration of Economic and Environmental Factors
+Building on prior research, this study extends the Bayesian Network (BN) models developed for environmental sustainability by integrating economic factors into the framework. The expert advisory panel recommended refining the models for Coonawarra and Riverland to capture both environmental and economic trade-offs. This involved incorporating factors such as operational costs, market-driven incentives, and capital investments in sustainable technologies, alongside existing environmental variables like water use, soil management, and fuel consumption.
+
+As in the previous study, region-specific BNs were developed based on the structure of the original environmental BN. Site-specific conditional probabilities were incorporated and scrutinized by the expert panel to reflect differences in how economic and environmental factors interact. In Coonawarra, the models accounted for the economic impacts of maintaining premium wine quality, including the cost of labor-intensive vineyard management and investments in sustainability initiatives. In Riverland, the focus was on the financial viability of high-volume production and the role of irrigation costs and water pricing in sustainability decisions.
+
+Workshops were conducted to refine the models, with discussions emphasizing the role of economic pressures in sustainability decision-making. In Coonawarra, expert input resulted in two distinct BN models, reflecting differing vineyard management approaches—one prioritizing opportunity-based tractor use for under-vine operations, while the other emphasized more structured under-vine management and soil conservation strategies. In Riverland, the expert panel reached a greater consensus, leading to a single BN model that reflects the region’s emphasis on cost-effective vineyard practices and water-efficient strategies.
+
+By incorporating economic considerations into these region-specific BN models, this study aims to provide a more holistic understanding of sustainability in Australian viticulture, offering insights that can inform both industry practices and policy interventions.
+
+\subsection{Scenario design and analysis}
+% How and why were the selected regions chosen.
+
+\section{Results}
+
+\subsection{Definitions}
+
+The critical economic factors identified by the industry panel and their agreed definitions are presented in Table~\ref{tab:definitions}. To ensure consistency in analysis, each variable was classified into a binary state: an "ideal" scenario (economically favourable) or a "non-ideal" scenario (economically unfavourable). This classification allows for structured assessments of financial sustainability and facilitates the integration of economic and environmental factors within the Bayesian Network (BN) framework.
+
+For example, Fuel Use was categorized as low (ideal) or high (non-ideal) based on operational efficiency and cost per litre. Similarly, Water Use was assessed as efficient (ideal) or inefficient (non-ideal), considering both the total volume used and the cost per megaliter. Labour Costs, Repair and Maintenance Expenses, and Electricity Costs were similarly categorized based on industry benchmarks, reflecting financial sustainability in vineyard operations.
+
+Other factors, such as Grape Quality and Yield Targets, Winery Contract Certainty, and Market Supply and Demand, were also assigned binary classifications to capture their economic impact on vineyard profitability. Additionally, variables related to equipment and operational efficiency—such as Equipment Age, Equipment Use in Hours, and Specialist Equipment Needs—were classified to reflect their role in cost management and long-term investment strategies.
+
+By applying this binary classification system, the study translates complex economic considerations into a measurable framework, allowing for direct comparisons across factors. This approach was essential for constructing the Economic Bayesian Network (BN), ensuring that key economic drivers and trade-offs were accurately captured.
+
+For reference, the definitions of environmental factors from the previously developed Bayesian Network models, which also follow the binary ideal/non-ideal classification, are provided in Appendix~\ref{appendix:environmental_definitions}. While environmental sustainability remains a crucial aspect of this study, only economic definitions are presented in this section due to space constraints.
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\scriptsize
+\begin{tabular}{ll}
+\hline
+\textbf{Variable name}                       & \textbf{Definition}                                                                                                                                                                                                                                                                                                    \\ \hline
+\textbf{Operating Cost}                      & The total cost of operations                                                                                                                                                                                                                                                                                           \\
+\textbf{Fuel use}                            & \begin{tabular}[c]{@{}l@{}}Total amount of fuel (diesel, petrol, lpg and biodiesel) used by a vineyard in a \\ financial year (L/Ha) (not contractor fuel)\end{tabular}                                                                                                                                                \\
+\textbf{Water use}                           & Total amount of water used by a vineyard in a financial year (ML * cost/ML)                                                                                                                                                                                                                                            \\
+\textbf{labor cost}                          & fixed labor costs, any labor costs that are  not contractors.                                                                                                                                                                                                                                                          \\
+\textbf{electricity use}                     & \begin{tabular}[c]{@{}l@{}}Total amount of electricity used by a  vineyard in a financial year\\ (kWh * cost/kWh)\end{tabular}                                                                                                                                                                                         \\
+\textbf{fertiliser}                          & \begin{tabular}[c]{@{}l@{}}Total amount of nitrogen (synthetic and organic) used by a vineyard in a \\ financial year (Kg * cost Kg)\end{tabular}                                                                                                                                                                      \\
+\textbf{Repair and maintenance}              & \begin{tabular}[c]{@{}l@{}}cost of repair and maintenance for  vineyard equipment such as trellace, \\ irrigation, tractor, etc\end{tabular}                                                                                                                                                                           \\
+\textbf{Contract labour}                     & \begin{tabular}[c]{@{}l@{}}Hand picking, wire lifting, canopy manipulation, pruning, shoot bashing\\  (not fixed staff)\end{tabular}                                                                                                                                                                                   \\
+\textbf{Equipment age in years}              & Whether equipment is new and using more recent technology                                                                                                                                                                                                                                                              \\
+\textbf{Equipment use in hours}              & Whether equipment has been used for less (ideal) hours or more (not ideal)                                                                                                                                                                                                                                             \\
+\textbf{specialist equipment}                & \begin{tabular}[c]{@{}l@{}}Vineyards setup determining the requirement/need for specialist equipment.\\ This is broad definition including leaf plucking, undervine mowers etc\end{tabular}                                                                                                                            \\
+\textbf{Agrochemical type}                   & \begin{tabular}[c]{@{}l@{}}When selecting agrochemicals, those which are less hazardous to beneficial \\ organisms and/or have a lower environmental impact are considered\end{tabular}                                                                                                                                \\
+\textbf{Spray application number}            & \begin{tabular}[c]{@{}l@{}}Number of foliar spray applications used to control pests and diseases \\ (spray applications/Ha/FY)\end{tabular}                                                                                                                                                                           \\
+\textbf{Grape quality and yield targets}     & \begin{tabular}[c]{@{}l@{}}The yield and quality targets of a vineyard block as outlines in the grape \\ supply contract.\end{tabular}                                                                                                                                                                                 \\
+\textbf{Winery contract certainty}           & \begin{tabular}[c]{@{}l@{}}Certainty of income vs uncertainty. For example starting the season with a \\ contract vs a late in the season contract or going to market\end{tabular}                                                                                                                                     \\
+\textbf{Yield}                               & Tonnage of grapes harvested                                                                                                                                                                                                                                                                                            \\
+\textbf{adverse events}                      & \begin{tabular}[c]{@{}l@{}}hail, fire, frost, disease, etc - sudden changes during a season that result\\  in catestrophic impact on yield\end{tabular}                                                                                                                                                                \\
+\textbf{Seasonal conditions}                 & A vineyard’s regional climatic conditions.                                                                                                                                                                                                                                                                             \\
+\textbf{Vineyard floor management}           & Proportion of vineyard floor covered with a cover crop.                                                                                                                                                                                                                                                                \\
+\textbf{Pest and disease management methods} & \begin{tabular}[c]{@{}l@{}}All available methods of management are considered before a management\\  program is chosen (i.e. biological, chemical, cultural, mechanical, \\ and technological)\end{tabular}                                                                                                            \\
+\textbf{Electricity Price}                   & The unit cost of electricity purchased by a vineyard                                                                                                                                                                                                                                                                   \\
+\textbf{Renewable Fuel}                      & Percentage of fuel used that is renewable.                                                                                                                                                                                                                                                                             \\
+\textbf{Grape Price}                         & Grape price per tonne                                                                                                                                                                                                                                                                                                  \\
+\textbf{Market supply and demand}            & \begin{tabular}[c]{@{}l@{}}The relationship between the quantity of winegrapes produced and the\\  quantity that consumers wish to buy\end{tabular}                                                                                                                                                                    \\
+\textbf{Pest and Disease Management}         & \begin{tabular}[c]{@{}l@{}}The management of pests and diseases such as through the employ of \\ fungicide and pesticides\end{tabular}                                                                                                                                                                                 \\
+\textbf{Tractor passes}                      & The number of times a tractor passes over the whole vine row area                                                                                                                                                                                                                                                      \\
+\textbf{Water use efficiency}                & The amount of water used per tonne of grapes produced                                                                                                                                                                                                                                                                  \\
+\textbf{Water licences}                      & Current water licences and permits are adhered to                                                                                                                                                                                                                                                                      \\
+\textbf{Water Price}                         & The cost per unit of water paid for by a vineyard                                                                                                                                                                                                                                                                      \\
+\textbf{Water quality}                       & \begin{tabular}[c]{@{}l@{}}Water used for irrigation is assessedannually for quality (pH, chloride,\\  sodium absorption ratio, electrical conductivity, soluble solids,\\  hardness, microbial contamination). Water that may case soil\\  degradation or irrigation inefficiency is treated before use.\end{tabular} \\
+\textbf{Water Scarcity}                      & Whether the country is suffering drought or not (is defined by BOM)                                                                                                                                                                                                                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Economic Bayesian Networks}
+
+The Economic BNs for Coonawarra and the Riverland contained structural differences reflecting the distinct regional relationships of their economic factors. Aligned with prior work, with structural differences highlighting the distinctions in the operational utility of 'Tractor Passes' through Coonawarra connecting 'Fertiliser Use' to 'Tractor Passes' and the Riverland not. Similarly, Coonawarra connected 'Vineyard Floor Management' to 'Contract Labor', reflecting the region’s use of external contractors for these tasks. The differences in operations were discussed during workshops and found to be predominantly due to the changing priorities of different vineyards and regions. Furthermore, the discussion highlighted the existence of contextual information that was difficult to incorporate due to its temporal nature, which was key to the why behind these reasons, with examples including planning around contractor availability due to relying on their time schedules, the need for responses to time-sensitive issues such as maintenance and breakages, and unforeseeable logistical factors. A further difference was the link between 'Water Scarcity' and 'Water Use' in the Riverland model, reflecting the region’s resource-sensitive environment. Unlike Coonawarra, where water licences are more widely available, Riverland growers are more subject to seasonal scarcity, influencing both costs and vineyard productivity.
+
+Notably, both economic BNs have three points of origin, that is, three critical influences that are parent nodes to all of the factors influencing 'Economic Impact'. These are water resource management, 'Seasonal Conditions' and 'Market Supply and Demand'. Noting that water resource management is driven by the three factors 'Water Use Efficiency', 'Water Licences' and 'Water Quality', with these nodes only directly influencing water and nothing else; the outcome of 'Water Use' is further driven by other factors and somewhat within the control of vineyard managers. Of the BN's three critical drivers, 'Economic Impact' is directly connected to 'Market Supply and Demand', due to 'Grape Revenue' being connected only by 'Yield' as opposed to 'Operating Cost' having a path of several nodes. This level of connectivity is closely followed by 'Seasonal Conditions', which is equidistant from 'Grape Revenue' and 'Operating Cost'. An interesting point regarding these connections was made during workshops as to how vineyard operations tend to adapt to these outside factors, changing yield targets and thus input resources and whether a vineyard would even choose to operate over a season depending upon projected climates and market prices.
+
+\subsubsection{Coonawarra}
+
+The Economic BN for the Coonawarra region describes the sensitivity of economic factors through the terminal 'Economic Impact' node (see Figure \ref{fig:coon_econ}. This is corollary to factors that contribute to 'Operating Cost' and 'Revenue' through their primary contribution to the terminal node and definition of 'Economic Impact' (See Table \ref{tab:definitions}). 'Revenue' is primarily sensitive to 'Grape Price' and 'Yield', with 'Market Supply and Demand' being the tertiary driver affecting 'Grape Price'. 'Operating Cost' has a more complex set of relationships, being shaped by numerous factors. In contrast to 'Revenue', this includes many factors vineyard managers can influence, including 'Labour Cost', resource use (fuel, electricity, fertiliser and water), and 'Repair and Maintenance' expenses.
+
+% Sensitivity in regard to the origin nodes.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Coonawarra Economic.png}
+    \caption{Riverland-specific Bayesian Network illustrating key factors impacting economic outcomes, with nodes coloured by sensitivity to economic impact and arrow thickness representing relative strength of nodes' influence to one another.}\label{fig:coon_econ}
+\end{figure}
+
+\subsubsection{Riverland}
+
+A distinct attribute of the Riverland BN is its greater sensitivity to 'Seasonal Conditions' and 'Market Supply and Demand'. A consideration is the difference that a warmer climate brings with regard to increased ripening rates and growing capacity, allowing large yields if the market exists for them. The warmer climate also determines the region's water scarcity more strongly than in the Coonawarra, as indicated by the greater connection strengths through thicker arcs as well as the increased sensitivity represented in Figure \ref{fig:riv_econ}.
+
+The structure between Coonawarra and the Riverland is very similar, with some differences as described prior. With regard to the differences in uncertainty, the major change between them is illustrated in a greater sensitivity to more nodes and increased overall strength of connections, especially with regard to 'Seasonal Conditions' and 'Market Supply and Demand'. It is important that this uncertainty is considered at the regional level and not the vineyard, with the difference in variance and behaviour being a broad remark regarding vineyards within the Riverland; this comment is especially applicable when considering factors such as 'Winery Contract Certainty' alongside 'Grape Quality and Yield Targets'. There is the potential to remove a great deal of uncertainty if a vineyard is able to determine these types of factors prior to a season rather than rely on market outcomes after grapes have grown or if contracts are subject to changes in trade or consumer behaviour.
+
+Further to the influence of 'Operating Cost' and its determining factors, both BNs spread the influence of these types of decisions evenly amongst many different contributors. That is, unlike 'Grape Revenue', 'Operating Cost' is more controllable by managers and subject to less uncertainty, being driven by decisions regarding general resource use, maintenance and decisions regarding seasonal outcomes. The significance of operating cost is is less evident through sensitivity and more evident through the indegree of 'Operating Cost' in both of the BNs. However, the sensitivity to the parent nodes of 'Operating Cost' is more pronounced within Coonawarra due to the greater diving force of climate.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{riverland economic.png}
+    \caption{Riverland-specific Bayesian Network illustrating key factors impacting economic outcomes, with nodes coloured by sensitivity to economic impact and arrow thickness representing relative strength of nodes' influence to one another.}\label{fig:riv_econ}
+\end{figure}
+
+\subsection{Pooled Bayesian Networks}
+
+Combining the economic BNs with the previously developed environmental BNs (\cite{boyd2025bn}, environmental BNs are also included in the appendix) resulted in a complex system with two terminal nodes. Although complex in their structure, there are several similarities between the two pooled BNs, both to their origin BNs and to each other. By introducing Environmental elements, a new set of originating factors, parents to terminal nodes, is introduced through the inclusion of the concept of soil management. Soil management, although not present in the economic BN, has influence over many of the factors it brings, such as 'Water use' and, indirectly 'Tractor Passes' and 'Fuel use'. As origin nodes, soil management is represented through 'Nutrient Leaching Management' and 'Soil Organic Carbon Management', with 'Soil Degradation Management' also being a factor but included as a child node. 
+
+Along with the introduction of greater complexity through an increased number of factors, CPTs have been altered to include both the economic and environmental impacts. Some nodes have been influenced more than others through the pooling of worst and best-case scenarios. As a result, several nodes have become equally and oppositely weighted between their contributions to the environment and economy, creating points at which decisions equally influence the impacts of one positively as they do to the other negatively. This is a result of experts rating worst and best-case scenarios as equal or closely equal to their inverse probability ($1-p$), as well as further complexity being introduced through greater connections that operate to dilute any one parent node's contribution. However, many of these decisions, or node connections and influences, are driven by decisions not directly related in origin but have equal importance within the BN. For example, the introduction of soil management as a group of factors does not directly relate to market considerations such as 'Grape Quality and Yield Targets' but is indirectly connected through the considerations of 'Tractor Passes' and 'Fuel use'. This makes these nodes that have equal weightings between environmental impact and economy pivotal points of interaction between these external factors, points within the BNs that highlight decisions sensitive to both the economic and environmental outcomes of vineyards.
+
+The points of #???
+
+\subsubsection{Coonawarra}
+
+The combination of factors and connections, although creating a complex system, is comprised of two distinct systems and an intermediary interface between the two. The combined BN connects economic and environmental impacts for Coonawarra (see Figure \ref{fig:coon_pool}), with the points of connection between them being resource use ('Fertiliser Use', 'Water Use' and 'Fuel Use'), management strategies ('Pest and Disease Management' and 'Vineyard Floor Management') and 'Water Quality'. Sensitivity and connection strength within components that only influence one of the impacts are unchanged due to these nodes being within cliques that do not interact with the newly introduced nodes, for instance, agrochemicals and grape revenue for environment and economy, respectively. However, both systems are sensitive to 'Seasonal Conditions' and 'Water Quality' and soil management more generally, with these connecting to both terminal nodes within only a few arcs.
+
+There is an intricate relationship between resource use, management and climate conveyed by this network. External conditions, predominantly 'Seasonal Conditions', determine risk factors such as pests and diseases (and the management thereof) and 'Adverse Events'. This relationship feeds into managerial decisions driven by market pressures through 'Market Supply and Demand' that are further balanced between resource restrictions and cost benefits of greater yields. This leads to decisions surrounding the management of driving environmental factors, particularly soil and its maintenance through 'Soil Leaching Management' and 'Soil Nutrients Management', as contingent on market dynamics and access to potential revenue in determining whether management strategies can be executed or not. This also manifests in the decisions as to whether to utilise more resources to take advantage of these demands. This pivotally creates a dependence on some environmental management strategies as either risk mitigation or environmental maintenance as reliant on economic prospects. However, this does not fully extend to all environmental concerns, such as agrochemical usage, and is also not purely deterministic from the economic factors alone.
+
+It is further important to consider that several nodes relevant to these relationships, especially critical to the intermediary interface between environment and economy, are not highlighted in the sensitivity analysis. This is not due to a lack of their critical role but due to their equally detrimental and positive effect on both terminal nodes. Where 'Tractor Passes' and 'Water Use' equally contribute positively to the economic bottom line as they do adversely to environmental outcomes given their best and worst cases. Similar to this, 'Yield' also closely describes the same effect. However, the relationship is not entirely straightforward; while the best-case scenario was more favourable to the economic outcome, there is a greater overlap of positive outcomes for both terminal nodes ($p=0.6$ when all factors are equally ideal).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{Coonawarra Pooled.png}
+    \caption{Riverland-specific Bayesian Network illustrating key factors impacting economic outcomes, with nodes coloured by sensitivity to economic impact and arrow thickness representing relative strength of nodes' influence to one another.}\label{fig:coon_pool}
+\end{figure}
+
+\subsubsection{Riverland}
+
+The pooled model for the Riverland differs only slightly structurally from the Coonawarra BN (see Figure \ref{fig:riv_pool}), with the most significant differences being the previously described motivations for structural differences such as more significance given to pests than disease, more market uncertainty, distinct climates and the different primary sources of water \cite{boyd2025bn}. The most notable difference in the BNs is the structural change of the intermediary nodes that lie between the economic and environmental cliques. This manifests in the 'Fuel Use' node describing the equal effect that a theoretical litre of fuel has positively on the economic outlook versus its adverse effect on a vineyard's environmental outlook. Compared to the Coonawarra BN, the 'Tractor Passes' node is no longer an equal trade-off within the Riverland BN. Beyond this critical difference, the structural differences are those highlighted previously described environmental and economic BNs.
+
+The differing structure of the Riverland also results in a different emphasis on some connections compared to Coonawarra. This is evident in the greater strength of the connection between 'Market Supply and Demand' to 'Winery Contract Certainty' and the stronger connection between 'Seasonal Conditions' to 'Adverse Events'. It is further important to consider that the context of these nodes is also different, with frost events being less likely in the Riverland than in Coonawarra, changing the emphasis of 'Adverse Events' to be more reflective of heat waves, droughts and bushfires. 
+
+The Riverland BN further illustrates the region's greater sensitivity in general to broader factors than the Coonawarra. This, in turn, reflects this region's greater uncertainty, which is important to consider in tandem with the physical differences between these two areas, with the Riverland being a much larger and more diverse region not just in the number and size of vineyards but in the greater agricultural production including citrus and almond production. This is an important consideration within the Riverland, where the BN highlights a greater economic driving factor, being particularly sensitive to 'Market Supply and Demand' as well as 'Winery Contract Uncertainty'. This consideration should be done in tandem due to other factors that exist in this region, such as greater alternative options for potential contracts in other produce that contend with the feasibility of growing grapes.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{riverland pooled.png}
+    \caption{Riverland-specific Bayesian Network illustrating key factors impacting economic outcomes, with nodes coloured by sensitivity to economic impact and arrow thickness representing relative strength of nodes' influence to one another.}\label{fig:riv_pool}
+\end{figure}
+
+\subsection{Scenario Models}
+
+The following scenarios assess the effects of increasing climate extremes on key economic and environmental factors in Coonawarra and the Riverland, based on insights from Wine Australia's climate research, which projects a rising likelihood of extreme weather events. To establish a baseline for comparison, Scenario 0 represents the default state of the BNs with no evidence introduced. In Scenario 1, we introduce a ‘not ideal’ climate condition within the pooled networks, reflecting a worsening climate outlook. To further emphasise the impact of extreme conditions, Scenario 2 sets all immediate child nodes of climate to ‘not ideal’, simulating a broader systemic response to adverse climate effects. These child nodes include 'Pest and Disease Management', 'Spray Application Number', 'Adverse Events' and 'Water Quality'. Note that between the two BNs, the structure differs, resulting in 'Water Scarcity' also being a child node of 'Seasonal Conditions' in Coonawarra but not in the Riverland due to differing primary water sources.
+
+Building on this, Scenario 3 incorporates tipping-point factors—nodes that, as discussed previously, are factors that negatively impact the environmental outlook while benefiting economic outcomes - by setting these nodes to ‘not ideal’ within the BN. Noting again that the structure between the two regions differs slightly, changing the selected nodes provided evidence in the final two scenarios (further described in the sections below). In contrast, Scenario 4 assigns these same nodes ‘ideal’ evidence, allowing for a direct comparison of their influence under different assumptions. Importantly, Scenarios 3 and 4 retain all other nodes in the same state as Scenario 2, ensuring that the climate outlook remains unchanged while isolating the effects of these key regional decision factors.
+
+\subsubsection{Coonawarra}
+
+The results from the scenarios are depicted in Figure \ref{fig:coonawarra_scenarios} indicate that increasing climate stress reduces the likelihood of an ideal environmental impact in Coonawarra, while the economic impact remains relatively stable, with only a slight decline across scenarios.
+
+In Scenario 1, where only seasonal conditions are set to ‘not ideal’, minimal changes are observed across economic and environmental outcomes. However, in Scenario 2, where all immediate child nodes of climate—Adverse Events, Pest and Disease Management, Repair and Maintenance, Spray Application, Water Quality, and Water Scarcity—are also set to ‘not ideal’, notable differences emerge. Grape prices decline, aligning with reductions in market supply and demand, while vineyard soil degradation and vineyard floor management decrease. Concurrently, fuel and electricity use increase, suggesting additional input requirements to mitigate adverse conditions.
+
+Although grape revenue and operating costs fluctuate only slightly, they are maintained in an ideal state given the scenario conditions, reflecting their importance in stabilizing economic performance. In contrast, other factors, such as fuel use, become more ideal, likely due to improved tractor utilization, while management practices shift to a less ideal state, suggesting these aspects are compromised to maintain financial stability.
+
+Scenario 3 and Scenario 4 introduce further modifications by adjusting swing nodes—Tractor Passes, Water Use, and Yield—to ‘not ideal’ and ‘ideal’, respectively. In Scenario 3, these changes contribute to an increased reliance on resource inputs, particularly in mitigating productivity losses. In contrast, Scenario 4 results in a more favourable economic outcome while maintaining the environmental impacts observed in Scenario 2.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{radar coon.png}
+    \caption{Changes across scenarios in key economic and environmental factors for Coonawarra. The radar plot illustrates variations in the likelihood of ideal outcomes for the corresponding nodes represented on each axis. The enclosed areas highlight shifts across the five scenarios, displaying only nodes that change as a consequence of all scenarios.}
+    \label{fig:coonawarra_scenarios}
+\end{figure}
+
+
+\subsubsection{Riverland}
+
+The results indicate that a greater variety of factors are affected by changing climate conditions in the Riverland compared to Coonawarra. Despite these variations, the overall trend remains consistent, with the likelihood of an ideal environmental impact decreasing across scenarios, while economic impact remains relatively stable.
+
+A key distinction in the Riverland is the more pronounced effect on operating costs, which decrease more visibly as grape revenue increases, suggesting a stronger economic adjustment mechanism compared to Coonawarra. Additionally, a broader range of factors exhibit slight changes across scenarios, which may reflect the greater variety of vineyard structures, management practices, and circumstances in the region. This suggests that while more factors are influenced by climate stress, the complexity and diversity of vineyard operations make it less straightforward to identify a single dominant pattern of change across all scenarios.
+
+In Scenario 1, where only seasonal conditions are set to ‘not ideal’, minimal changes occur. However, in Scenario 2, when all immediate child nodes of climate—Adverse Events, Fertiliser Use, Pest and Disease Management, Spray Application, and Water Quality—are also set to ‘not ideal’, notable shifts emerge. Operating costs begin to decline, while grape revenue increases, reinforcing the observation that economic resilience in the Riverland may be more adaptive to climate stress through cost adjustments.
+
+In Scenarios 3 and 4, the swing nodes—Fuel Use, Water Use, and Yield—are adjusted to ‘not ideal’ and ‘ideal’, respectively. These modifications further impact operating costs and input use, with Scenario 3 showing increased resource reliance to maintain productivity, while Scenario 4 demonstrates a more favorable economic response under improved conditions.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{radar riv.png}
+    \caption{Changes across scenarios in key economic and environmental factors for Coonawarra. The radar plot illustrates variations in the likelihood of ideal outcomes for the corresponding nodes represented on each axis. The enclosed areas highlight shifts across the five scenarios, displaying only nodes that change as a consequence of all scenarios.}
+    \label{fig:coonawarra_scenarios}
+\end{figure}
+
+\subsection{Expert Insights}
+% What methods were considered to counter these effects?
+% What could be introduced?
+% What are the ramifications of these connections
+
+This final workshop integrated prior discussions on the environmental and economic Bayesian Networks, synthesizing expert-driven weightings to refine causal relationships between key viticultural factors. The outcomes of this workshop provide insights into the applicability of the model, its regional adaptability, and key sustainability considerations for viticulture.
+
+Integration of Environmental and Economic Impacts
+The Bayesian Network developed throughout this research effectively quantifies trade-offs between economic and environmental sustainability. A central feature of the model is its capacity to illustrate how resource inputs, such as water use, impact both economic viability and environmental sustainability. The expert-driven weightings incorporated during the workshops streamlined the calibration of the model, reducing the need for further manual adjustments and allowing for an integrated assessment of sustainability trade-offs.
+
+Regional Focus and Model Granularity
+The model was designed to capture broad regional trends, though finer-scale factors, such as soil heterogeneity within subregions, were found to have limited influence at this level. Climate change emerged as a significant driver of practice change, particularly in relation to vineyard management decisions such as spray application timing and input intensity. Experts noted that increasing climatic variability has led to greater reliance on chemical interventions while simultaneously introducing constraints on their application due to shifting weather patterns.
+
+Model Adaptability and Practical Applications
+The Bayesian Network was recognized for its adaptability, allowing users to test changes in prioritization and assess the feasibility of different viticultural strategies. The interactive nature of the model enables scenario testing, where users can explore potential outcomes based on different input configurations. Future applications could further enhance this adaptability by allowing growers to input specific vineyard data. Where empirical data is unavailable, expert knowledge can be leveraged to inform model predictions, thereby bridging data gaps in decision-making.
+
+Key Economic and Environmental Considerations
+Several critical economic and environmental factors were emphasized during the workshop:
+
+Water Use and Irrigation Efficiency: Experts identified infrastructure maintenance, real-time monitoring, and targeted incentives for efficiency improvements as crucial elements in managing water resources sustainably. While economic considerations often drive water use decisions, ensuring irrigation efficiency was recognized as a key factor in reducing environmental impact.
+Capital Investment in Sustainable Practices: The role of capital investment, particularly in fuel-efficient machinery and irrigation infrastructure, was widely discussed. Experts debated the feasibility of such investments, noting that while they may contribute to long-term economic and environmental sustainability, the initial costs often present barriers to widespread adoption.
+Labor and Contracting Constraints: The availability of contract labor remains a key challenge in vineyard operations. Experts highlighted the difficulties associated with contractual obligations, particularly in securing labor at optimal times for vineyard management practices such as pruning.
+Challenges in Decision-Making
+A key theme that emerged from the workshop was the difficulty in balancing economic and environmental objectives. Experts noted that regional wine pricing structures often do not reflect actual production quality, making it difficult for growers to achieve premiums for sustainable practices. This disconnect between production quality and market valuation creates uncertainty for growers seeking to invest in sustainable initiatives. Additionally, trade-offs between quality and yield remain a persistent challenge, requiring targeted management strategies to optimize production outcomes.
+
+Potential Future Developments
+The findings from this workshop suggest several avenues for future model refinement:
+
+Expanded Model Scope: The incorporation of additional variables such as feral animal control, irrigation monitoring improvements, and late pruning as a climate adaptation strategy could enhance the model’s predictive capability.
+Infrastructure Investment and Maintenance: Further refinement of the model could explore how maintenance costs and infrastructure investments influence long-term sustainability outcomes.
+Grower-Specific Decision Support: The model's accessibility for individual growers could be improved by developing an interface that allows for real-time input adjustments, enabling them to test the implications of different management decisions under varying economic and environmental conditions.
+This final expert workshop reinforced the utility of Bayesian Networks in integrating expert insights with empirical data, demonstrating their potential as dynamic tools for assessing trade-offs between economic and environmental sustainability in viticulture. The adaptability of the model suggests that it could serve as a decision-support tool for growers, policymakers, and industry stakeholders seeking to optimize vineyard management strategies under changing climatic and economic conditions.
+
+One grower from Coonawarra noted that reducing tractor passes or shifting to minimal tillage could improve cost efficiency but could also lead to increased weed and pest pressure, which then requires more chemical intervention.
+In the Riverland, the panel noted that water price volatility and allocation uncertainty are forcing growers to prioritize economic decisions over long-term environmental considerations, such as soil health and biodiversity maintenance.
+
+\section{Discussion}
+
+% limitations of the method:This study has demonstrated that the sustainability of viticulture in Coonawarra and Riverland is shaped by economic stability, market structures, and environmental constraints. By integrating economic and environmental Bayesian Networks (BNs), this research provides a structured framework for quantifying trade-offs, offering a nuanced perspective on how economic decisions influence environmental outcomes.
+
+The findings suggest that economic constraints frequently override environmental considerations, with contract security, operational costs, and capital investment requirements playing dominant roles in sustainability adoption. The final expert workshop reinforced these insights, revealing the importance of market structures, financial incentives, and policy interventions in determining whether sustainability initiatives are successfully integrated into vineyard management strategies.
+
+A core strength of this study is its equal weighting of economic and environmental Bayesian Networks, ensuring that both perspectives were proportionally integrated into decision-making scenarios. However, a notable limitation is that economic and environmental sustainability operate on different scales and involve distinct metrics that are not always directly comparable. This inherent abstraction introduces a risk of oversimplifying complex interactions and trade-offs, potentially leading to conclusions that do not fully capture the nuanced priorities or long-term implications of either domain. The challenge of integrating multiple sustainability dimensions into a unified decision-making model has been widely discussed in sustainability research. Buys et al. (2014) highlight this issue in the context of Australian dairy farming, where a triple-bottom-line approach was required to balance economic, environmental, and social sustainability objectives, yet aligning these factors within a structured framework remained difficult. Similar complexities exist in viticulture, where financial viability, regulatory requirements, and ecological stewardship intersect in ways that are often difficult to quantify within a single model.
+
+\subsection{Scenario Interpretation}
+A central finding of this study is that economic stability can be maintained under worsening climate conditions, but often at the expense of environmental outcomes. The ability of growers to buffer financial risks through cost adjustments and operational flexibility aligns with existing literature that suggests short-term economic imperatives frequently dictate vineyard management decisions, leading to increased resource use and chemical interventions (Santiago-Brown et al., 2015).
+
+While climate variability was acknowledged as a growing constraint on vineyard operations, the study findings indicate that economic flexibility allows growers to mitigate financial risks without necessarily addressing long-term sustainability concerns. This raises important questions about the effectiveness of voluntary sustainability initiatives, particularly when the financial pressures of maintaining profitability take precedence over environmental responsibility.
+
+The challenge of defining and quantifying sustainability in viticulture is further emphasized by Santiago-Brown et al. (2015), who identify environmental, economic, and social dimensions as core components of sustainability, each requiring distinct metrics that are often difficult to align. Similarly, the MESMIS framework, which categorizes sustainability into descriptors, indicators, and parameters, struggles to account for regional variability and the interconnectedness of economic and environmental impacts (Montalvo-Falcón et al., 2023). The subjectivity of sustainability definitions further complicates measurement, as stakeholder priorities often shape the way sustainability is assessed and implemented (Baiano, 2021). These challenges reinforce the need for adaptive and context-specific assessment frameworks, particularly in industries such as viticulture, where sustainability priorities vary between production models and regional market conditions.
+
+Regional Sensitivities and Structural Differences
+The regional comparison between Coonawarra and Riverland highlights distinct economic-environmental trade-offs, emphasizing that the structure of the wine market, rather than solely environmental conditions, dictates the extent to which sustainability considerations are integrated into vineyard management.
+
+In Riverland, economic outcomes are more directly influenced by market fluctuations and contract security, reinforcing previous studies that highlight the risk exposure of high-volume production regions (ACCC, 2020). Growers in this region rely heavily on long-term purchasing agreements with bulk wine producers, making financial stability more dependent on contract terms than on environmental conditions. As a result, sustainability efforts in Riverland are largely driven by regulatory compliance rather than proactive environmental management.
+
+In contrast, Coonawarra’s sustainability strategies appear more closely tied to soil conservation and water-use efficiency, reflecting the long-term priorities of premium-focused wine production. These findings are consistent with studies on premium viticulture, which suggest that higher-value market positioning allows for a greater integration of environmental sustainability into economic strategies (Baiano, 2021).
+
+Müller et al. (2024) provide a similar perspective on participatory adaptation processes, arguing that implementation probability BNs allow stakeholders to better understand system trade-offs, thus facilitating acceptance of adaptation measures. Their findings align with this study’s conclusion that regional adaptability must be considered in sustainability decision-making, particularly in sectors where financial and environmental incentives diverge.
+
+\subsection{Decision Points and Management Trade-offs}
+This study identifies swing nodes (e.g., Tractor Passes, Water Use, and Fuel Use) as key decision points where growers must navigate economic-environmental trade-offs. Water use, in particular, emerged as a factor where economic imperatives frequently overshadow sustainability objectives. The findings suggest that resource allocation decisions are driven more by cost management than by environmental considerations, aligning with prior research that shows growers are more responsive to financial incentives and regulatory mandates than to voluntary conservation measures (Wine Australia, 2023).
+
+The study also emphasizes the barriers to adopting capital-intensive sustainability initiatives, such as fuel-efficient machinery, soil monitoring technology, and advanced irrigation systems. While these investments offer long-term cost savings and environmental benefits, expert insights highlighted that upfront costs remain prohibitive, particularly for smaller growers. This reinforces the need for targeted financial mechanisms to bridge the gap between economic constraints and sustainability adoption.
+
+Additionally, labor availability and contract structures were identified as key constraints on sustainable vineyard management. The difficulty in securing contract labor at optimal times was noted as a major operational challenge, affecting both cost efficiency and production quality. Growers facing labor shortages often compensate through increased mechanization or chemical inputs, further exacerbating economic-environmental trade-offs.
+
+Another concern raised in the expert workshop was the disconnect between production quality and price premiums, which creates uncertainty for growers investing in sustainability measures. If regional pricing structures do not reflect the added value of sustainable viticulture, growers are less likely to adopt environmental best practices. This further highlights the importance of reforming contract structures and pricing mechanisms to better align market incentives with sustainability goals.
+
+
+\section{Conclusion}
+This study provides a probabilistic framework for evaluating economic and environmental trade-offs in Australian viticulture, demonstrating that economic risk mitigation frequently occurs at the expense of environmental outcomes. The findings reinforce that contract security, capital investment barriers, and resource pricing structures shape the feasibility of sustainability adoption more than climate awareness alone.
+
+Müller et al. (2024) provide further evidence that participatory BNs improve the implementation probability of sustainability initiatives by aligning stakeholder expectations with adaptive decision-making strategies. Their work reinforces the conclusion that economic-environmental trade-offs are best addressed through scenario-based participatory modeling, ensuring that sustainability efforts remain viable under diverse financial and climatic conditions.
+
+By integrating Bayesian Networks with expert insights, this study offers a structured decision-support tool for growers, policymakers, and industry stakeholders. Future research should focus on quantifying financial returns on sustainability investments, improving contract transparency, and developing policy frameworks that incentivize resilient viticulture practices. These efforts will be critical for aligning economic incentives with environmental best practices, ensuring the long-term sustainability of Australia’s wine industry.
+
+% primary factors for economy
+% How are these different from the primary environmental factors
+% prioritisation of economy over environment as shown in the scenarios
+% swing nodes in max pooled models
+% What experts thought could be done
+% The use of policy, subsidies and technology to over come these issues.
+% Policy to help garner good outcomes for environment without sacrifices economic gains
+% Subsidies for innovations and government programs to help growers.
+% Technologies to reduce cost and risk.
+
+
+\section{Appendix}
+
+
+\begin{table}[]
+\scriptsize
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Variable name}                                                                  & \textbf{Definition}                                                                                                                                                                                                                                                                                                    \\ \midrule
+\textbf{Water use}                                                                      & Total amount of water used by a vineyard in a financial year (ML/Ha)                                                                                                                                                                                                                                                   \\
+\textbf{Agrochemical type}                                                              & \begin{tabular}[c]{@{}l@{}}When selecting agrochemicals, those which are less hazardous to\\ beneficial organisms and/or have a lower environmental impact\\  are considered\end{tabular}                                                                                                                              \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Spray application\\  number\end{tabular}}            & \begin{tabular}[c]{@{}l@{}}Number of foliar spray applications used to control pests and\\ diseases (spray applications/Ha/FY)\end{tabular}                                                                                                                                                                            \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Agrochemical \\ legislation\end{tabular}}            & \begin{tabular}[c]{@{}l@{}}The legislated regulations regarding agrochemical use as specified\\  by the APVMA. Dog book recommendations are further\\ restrictions for export wine production and to protect the reputation\\ of Australian wine.\end{tabular}                                                         \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Vineyard floor \\ management\end{tabular}}           & Proportion of vineyard floor covered with a cover crop.                                                                                                                                                                                                                                                                \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Pest and disease \\ management methods\end{tabular}} & \begin{tabular}[c]{@{}l@{}}All available methods of management are considered before a\\ management program is chosen (i.e. biological, chemical,\\ cultural, mechanical, and technological)\end{tabular}                                                                                                              \\
+\textbf{Electricity use}                                                                & \begin{tabular}[c]{@{}l@{}}Total amount of electricity used by a vineyard in a\\ financial year (kWh/Ha)\end{tabular}                                                                                                                                                                                                  \\
+\textbf{Electricity Price}                                                              & The unit cost of electricity purchased by a vineyard                                                                                                                                                                                                                                                                   \\
+\textbf{Renewable energy}                                                               & Percentage of energy that is renewable                                                                                                                                                                                                                                                                                 \\
+\textbf{GHG emissions}                                                                  & \begin{tabular}[c]{@{}l@{}}Total amount of GHG emission produced by a vineyard in a\\ financial year (Kg CO2e/Ha) as calculated  by NGA legislation\end{tabular}                                                                                                                                                       \\
+\textbf{Environmental Impact}                                                           & \begin{tabular}[c]{@{}l@{}}The positive/negative impact a vineyard has on its immediate\\ environment (to gate).\end{tabular}                                                                                                                                                                                          \\
+\textbf{Fertiliser use}                                                                 & \begin{tabular}[c]{@{}l@{}}Total amount of nitrogen (synthetic and organic) used by a\\ vineyard in a financial year (Kg/Ha)\end{tabular}                                                                                                                                                                              \\
+\textbf{Fuel use}                                                                       & \begin{tabular}[c]{@{}l@{}}Total amount of fuel (diesel, petrol, lpg and biodiesel) used by\\ a vineyard in a financial year (L/Ha)\end{tabular}                                                                                                                                                                       \\
+\textbf{Renewable Fuel}                                                                 & Percentage of fuel used that is renewable.                                                                                                                                                                                                                                                                             \\
+\textbf{Grape Price}                                                                    & Grape price per tonne                                                                                                                                                                                                                                                                                                  \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Nutrient leaching \\ management\end{tabular}}        & \begin{tabular}[c]{@{}l@{}}The depletion of nutrients in the grapevine root zone is minimised\\ through best practice irrigation scheduling and soil moisture monitoring.\end{tabular}                                                                                                                                 \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Market supply \\ and demand\end{tabular}}            & \begin{tabular}[c]{@{}l@{}}The relationship between the quantity of winegrapes produced\\ and the quantity that consumers wish to buy\end{tabular}                                                                                                                                                                     \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Pest and Disease\\ Management\end{tabular}}          & \begin{tabular}[c]{@{}l@{}}The management of pests and diseases such as through the employ\\ of fungicide and pesticides\end{tabular}                                                                                                                                                                                  \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Soil degradation\\ management\end{tabular}}          & \begin{tabular}[c]{@{}l@{}}Areas at risk of degradation via compaction or erosion are identified\\ and actions to remediate and minimise degradation are taken (i.e.\\ don’t traffic waterlogged soils, minimise cultivation, maintain\\ vineyard floor cover with cover crops, etc.)\end{tabular}                     \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Soil organic \\ carbon management\end{tabular}}      & \begin{tabular}[c]{@{}l@{}}Areas with low or declining soil organic carbon levels are identified\\ and actions to improve soil carbon levels are taken (i.e. minimise\\ cultivation, maintain vineyard floor cover with cover crops, apply\\ mulch or compost, etc.)\end{tabular}                                      \\
+\textbf{Tractor passes}                                                                 & The number of times a tractor passes over the whole vine row area                                                                                                                                                                                                                                                      \\
+\textbf{Water use efficiency}                                                           & The amount of water used per tonne of grapes produced                                                                                                                                                                                                                                                                  \\
+\textbf{Water licences}                                                                 & Current water licences and permits are adhered to                                                                                                                                                                                                                                                                      \\
+\textbf{Water Price}                                                                    & The cost per unit of water paid for by a vineyard                                                                                                                                                                                                                                                                      \\
+\textbf{Water quality}                                                                  & \begin{tabular}[c]{@{}l@{}}Water used for irrigation is assessed annually for quality (pH,\\ chloride, sodium absorption ratio, electrical conductivity,\\ soluble solids, hardness, microbial contamination). Water that\\ may case soil degradation or irrigation inefficiency is treated\\ before use.\end{tabular} \\
+\textbf{Water Scarcity}                                                                 & \begin{tabular}[c]{@{}l@{}}Whether the country is suffering drought or not (s defined by\\ BOM)\end{tabular}                                                                                                                                                                                                           \\
+\textbf{Weather Conditions}                                                             & A vineyard’s regional climatic conditions.                                                                                                                                                                                                                                                                             \\
+\textbf{\begin{tabular}[c]{@{}l@{}}Grape quality \\ and yield targets\end{tabular}}     & \begin{tabular}[c]{@{}l@{}}The yield and quality targets of a vineyard block as outlines\\ in the grape supply contract.\end{tabular}                                                                                                                                                                                  \\
+\textbf{Agrochemical score}                                                             & \begin{tabular}[c]{@{}l@{}}Agrochemicals with high human and environmental hazard\\ scores are avoided.\end{tabular}                                                                                                                                                                                                   \\ \bottomrule
+\end{tabular}
+    \caption{This table provides the definitions of key terms and concepts utilised throughout the study. Each term is explained in the context of its relevance to the terminal node environmental impact. The table was used by experts throughout the study to maintain clarity and meaning behind concepts and how they related.}\label{tab:definitions}
+\end{table}
+
+\end{document}
